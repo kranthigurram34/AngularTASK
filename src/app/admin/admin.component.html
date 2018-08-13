@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="vendorList">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Employee ID</th>
+          <th>Employee Name</th>
+          <th>Designation</th>
+          <th>Feedback</th>
+          <th>
+            <button type="button" class="btn btn-primary" (click)="onNew()">ADD Employee</button>
+          </th>
+          <th>
+            <button type="button" class="btn btn-danger" (click)="onDeleteAll()">DeleteAll</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees; let i=index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{employee.empId}}</td>
+          <td>{{employee.empName}}</td>
+          <td>{{employee.designation}}</td>
+          <td>{{employee.feedback}}</td>
+        <td>
+            <button type="button" class="btn btn-info" (click)="onEdit(i,employee,employee.empId)">Edit</button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-danger" (click)="onDelete(i,employee.empId)">Delete</button>
+          </td>  
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+<div id="Employee_Form" *ngIf="showNew">
+    <form name="Employee_Registration" method="PUT" [formGroup]="empForm" (ngSubmit)="editEmployee(employee.empId,employee)">
+      <div class="form-group">
+        <label>Employee Name<span id="required">*</span></label>
+        <input id="Employee_Fields" class="form-control" type="text" name="empName" placeholder="Enter Employee Name" [(ngModel)]="employee.empName" formControlName='Employee'/>
+        <div *ngIf="empForm.controls['empName'].touched && !empForm.controls['empName'].valid">
+          <div *ngIf="empForm.controls['empName'].hasError('required')" id="alert">
+            <span id="required">Employee Name is Required!</span>
+          </div>
+        </div>
+      </div>
+      <br><br><br><br>
+  
+      <div class="form-group">
+        <label>Designation<span id="required">*</span></label>
+        <input id="Employee_Fields" class="form-control" type="text" name="designation" placeholder="Enter Designation" [(ngModel)]="employee.designation" formControlName='designation'/>
+        <div *ngIf="empForm.controls['designation'].touched && !empForm.controls['designation'].valid">
+          <div *ngIf="empForm.controls['designation'].hasError('required')" id="alert">
+            <span id="required">Designation is Required!</span>
+          </div>
+          <div *ngIf="empForm.controls['designation'].hasError('pattern')" id="alert">
+            <span id="required">Invalid Designation!</span>
+          </div>
+        </div>
+      </div>
+      <br><br><br><br>
+              
+      <div class="form-group">
+        <label>Feedback<span id="required">*</span></label>
+        <input id="Employee_Fields" class="form-control" type="text" name="feedback" placeholder="Enter your feedback" [(ngModel)]="employee.feedback" formControlName='feedback'/>
+        <div *ngIf="empForm.controls['feedback'].touched && !empForm.controls['feedback'].valid">
+          <div *ngIf="empForm.controls['feedback'].hasError('required')" id="alert">
+            <span id="required">please provide feedback!</span>
+          </div>
+          
+        </div>
+      </div> 
+      
+      <br><br><br><br><br><br><br>
+
+        <div id="Admin_buttons">
+          <button type="submit" class="btn btn-success">Update</button>
+          &nbsp;&nbsp;&nbsp;
+          <button type="submit" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+      </form>
+</div>  

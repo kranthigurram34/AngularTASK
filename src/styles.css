@@ -1,0 +1,176 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html{
+    height: 100%;
+}
+ 
+body{
+	font-family: 'CreteRound-Regular';
+	background-color:  #f0f0f0;	
+ 	height: 100%;
+  	width: 100%;
+    margin: 0;
+}  
+
+a {
+    text-decoration: none;
+    color: #444;
+}
+a:hover {
+    color: #02b8dd;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 980px;
+}
+header {
+    height: 80px;
+    background-color: #131111;
+    position:sticky;
+    top:0;
+}
+header h1 {
+	font-size: 60px;
+    float: left;
+    margin-top: 6px;
+    color: #f6f5f5;
+}
+header h1 .color {
+    color: #02b8dd;
+}
+h1:hover{
+	color: #C70039;
+}
+
+#links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 40px;
+}
+#links li {
+    float: right;
+    margin-right: 10px;
+}
+#links li a {
+	color: #f6f5f5;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#links li a:hover {
+    color: #02b8dd;
+}
+
+#Employee_heading{
+    font-weight: 300;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #6b6d6d;
+    margin-top: 5%;
+    text-align: center; 
+}
+
+#Employee_Form{
+    margin-top: 10px;
+	border: 2px solid #a1a1a1;
+	border-radius: 5px;
+	background-color: #fdfdfd;
+	padding: 25px;
+	width: 500px;
+    height: auto;
+    margin: 0 auto;
+}
+
+#Employee_Form label{
+	text-align: left;
+	padding-right: 10px;
+    width: 100px;
+}
+
+#Employee_Fields{
+	height: 35px;
+    width: 400px;
+}
+
+#Employee_Form label, #Employee_Form input, #Employee_Form select{
+	display: block;
+	float: left;
+    margin-bottom: 10px;
+    margin-left: 4%
+}
+
+
+#required{
+	color: #ed2846;
+}
+
+#alert{
+    padding: 1px;
+    font-size: .9em;
+    margin-bottom: 5px;
+    display: inline-block; 
+    animation: 2s alertAnim forwards;
+}
+
+#Employee_button{
+    
+    display:block;
+   text-align:center;
+      color: white;
+      padding: 8px 15px;
+    
+    }
+#Employee_button:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#Admin_Form{
+    margin-top: 20px;
+    padding-left: 400px;
+}
+
+#Admin_Form input{
+    border-radius: 5px;
+    widows: 300px;
+    padding-left: 1%;
+}
+
+#Admin_button{
+    text-align: center;
+	border: none;
+	border-radius: 5px;
+	background-color: #4CAF50;
+    color: white;
+    padding: 8px 8px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#Admin_button:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+footer {
+    background-color: #474A49;
+    height: 25px;
+    position: sticky;
+    bottom: 0%;
+}
+#footer-info {
+	text-align: center;
+    margin-top: 10px;
+} 
+footer p, a{
+	color: #f6f5f5;
+}
+footer p{
+    margin-bottom: 0px;
+}

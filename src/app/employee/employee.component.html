@@ -1,0 +1,49 @@
+
+<div>         
+  <h2 id="Employee_heading">Employee List</h2> 
+</div>
+<div id="Employee_Form">
+<form name="Employee_Registration" method="PUT" [formGroup]="empForm" (ngSubmit)="saveEmployee()">
+  <div class="form-group">
+    <label>Employee Name<span id="required">*</span></label>
+    <input id="Employee_Fields" class="form-control" type="text" name="empName" placeholder="Enter Employee Name" [(ngModel)]="employee.empName" formControlName='Employee'/>
+    <div *ngIf="empForm.controls['empName'].touched && !empForm.controls['empName'].valid">
+      <div *ngIf="empForm.controls['empName'].hasError('required')" id="alert">
+        <span id="required">Employee Name is Required!</span>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br>
+
+  <div class="form-group">
+    <label>Designation<span id="required">*</span></label>
+    <input id="Employee_Fields" class="form-control" type="text" name="designation" placeholder="Enter Designation" [(ngModel)]="employee.designation" formControlName='designation'/>
+    <div *ngIf="empForm.controls['designation'].touched && !empForm.controls['designation'].valid">
+      <div *ngIf="empForm.controls['designation'].hasError('required')" id="alert">
+        <span id="required">Designation is Required!</span>
+      </div>
+      <div *ngIf="empForm.controls['designation'].hasError('pattern')" id="alert">
+        <span id="required">Invalid Designation!</span>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br>
+          
+  <div class="form-group">
+    <label>Feedback<span id="required">*</span></label>
+    <input id="Employee_Fields" class="form-control" type="text" name="feedback" placeholder="Enter your feedback" [(ngModel)]="employee.feedback" formControlName='feedback'/>
+    <div *ngIf="empForm.controls['feedback'].touched && !empForm.controls['feedback'].valid">
+      <div *ngIf="empForm.controls['feedback'].hasError('required')" id="alert">
+        <span id="required">please provide feedback!</span>
+      </div>
+      
+    </div>
+  </div> 
+  
+  <br><br><br><br>
+
+    <div id="Employee_buttons" class="col-xs-4">
+      <button type="submit" class="btn btn-success btn-xs">Submit</button>
+      </div>
+      </form>
+      </div>
